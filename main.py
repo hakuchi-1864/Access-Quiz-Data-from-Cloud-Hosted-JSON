@@ -23,10 +23,18 @@ def get_correct_answer(question_id):
                       return choice
   return "Question ID not found"
 
-if __name__ == "__main__":
-  question_id = int(input("Enter the Question ID: "))
-  correct_answer = get_correct_answer(question_id)
-  print(f"The correct answer is: {correct_answer}")
+def main():
+    try:
+        question_id = int(input("Enter the Question ID: "))
+        correct_answer = get_correct_answer(question_id)
+        if correct_answer:
+            print(f"The correct answer is: {correct_answer}")
+        else:
+            print("Question ID not found.")
+    except ValueError:
+        print("Invalid input. Please enter a valid question ID.")
+
+main()  
 
 
 
